@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>날씨 기반 코디</title>
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="./static/css/main-style.css" />
+    <script defer src="./static/js/common.js"></script>
+    <script defer src="./static/js/main.js"></script>
+  </head>
+  <body>
+    <div class="align-container">
+      <header class="header">
+        <div class="header-align-container">
+          <div class="logo-container">
+            <div class="logo">
+              <img src="./static/img/logo.png" alt="로고" />
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="weather-info-container">
+          <!-- 오늘의 날씨 -->
+          <div class="today-weather-container">
+            <p class="today-weather-title">오늘의 날씨</p>
+            <div class="locate-con">
+              <div class="locate-img-con">
+                <img src="./static/img/locate.png" alt="위치 아이콘" />
+              </div>
+              <p>서울특별시 강남구</p>
+            </div>
+            <div class="weather-contents-con">
+              <div class="top-con">
+                <div class="weather-img-con">
+                  <img src="./static/img/sun.png" alt="날씨 아이콘" />
+                </div>
+                <p class="temperature">12°C</p>
+                <p class="wind-chill">체감온도 9°C</p>
+                <p class="weather-state">맑음</p>
+              </div>
+              <div class="bottom-con">
+                <!-- 습도 -->
+                <div class="humidity-info-con">
+                  <div class="humidity-img-con">
+                    <img src="./static/img/humidity.png" alt="습도 아이콘" />
+                  </div>
+                  <div class="humidity-state-con">
+                    <div class="name">습도</div>
+                    <div class="value">65%</div>
+                  </div>
+                </div>
+                <!-- 바람 -->
+                <div class="wind-info-con">
+                  <div class="wind-img-con">
+                    <img src="./static/img/wind.png" alt="바람 아이콘" />
+                  </div>
+                  <div class="wind-state-con">
+                    <div class="name">바람</div>
+                    <div class="value">65%</div>
+                  </div>
+                </div>
+                <!-- 강수확률 -->
+                <div class="precipitation-info-con">
+                  <div class="precipitation-img-con">
+                    <img
+                      src="./static/img/precipitation.png"
+                      alt="강수확률 아이콘"
+                    />
+                  </div>
+                  <div class="precipitation-state-con">
+                    <div class="name">강수확률</div>
+                    <div class="value">65%</div>
+                  </div>
+                </div>
+                <!-- 자외선 -->
+                <div class="uv-info-con">
+                  <div class="uv-img-con">
+                    <img src="./static/img/uv.png" alt="자외선 아이콘" />
+                  </div>
+                  <div class="uv-state-con">
+                    <div class="name">자외선</div>
+                    <div class="value">65%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 대기질 정보 -->
+          <div class="air-quality-container">
+            <div class="air-quality-title">대기질 정보</div>
+            <div class="air-quality-info-con">
+              <div class="fine-dust-con">
+                <p class="name">미세먼지</p>
+                <p class="state">나쁨</p>
+              </div>
+              <div class="ultrafine-dust-con">
+                <p class="name">초미세먼지</p>
+                <p class="state">나쁨</p>
+              </div>
+            </div>
+          </div>
+          <div class="tip-container">
+            <div class="tip-img-con">
+              <img src="./static/img/info.png" alt="info" />
+            </div>
+            <p>
+              바람이 조금 불어서 체감 온도가 실제 기온보다 낮게 느껴질 수
+              있어요.
+            </p>
+          </div>
+
+          <!-- 내일 미리보기 -->
+          <div class="tomorrow-info-container">
+            <p class="title">내일 미리보기</p>
+            <div class="tomorrow-weather-con">
+              <div class="left-con">
+                <div class="weather-img-con">
+                  <img src="./static/img/tomorrow.png" alt="내일 날씨" />
+                </div>
+                <div class="weather-info-con">
+                  <p class="temperature">15°C / 8°C</p>
+                  <p class="weather-state">흐림</p>
+                </div>
+              </div>
+              <div class="right-con">
+                <p class="precipitation-title">강수확률</p>
+                <p class="precipitation-value">40%</p>
+              </div>
+            </div>
+            <div class="tomorrow-tip-con">
+              <div class="tip-img-con">
+                <img src="./static/img/style-select.png" alt="style" />
+              </div>
+              <p>
+                체감 기온 9℃ 기준, 가벼운 코트나 두꺼운 니트가 어울리는
+                날이에요.
+              </p>
+            </div>
+            <button class="btn-style">오늘 뭐 입을지 보기</button>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-align-container">
+          <!-- 홈 -->
+          <a href="/" class="home-con">
+            <div class="home-img">
+              <img src="./static/img/home-select.png" alt="home" />
+            </div>
+            <p class="select">홈</p>
+          </a>
+          <!-- 코디 -->
+          <a href="/style.html" class="style-con">
+            <div class="style-img">
+              <img src="./static/img/style.png" alt="style" />
+            </div>
+            <p>스타일</p>
+          </a>
+          <!-- 옷장 -->
+          <a href="/" class="closet-con">
+            <div class="closet-img">
+              <img src="./static/img/closet.png" alt="closet" />
+            </div>
+            <p>옷장</p>
+          </a>
+          <!-- 프로필 -->
+          <a href="/" class="profile-con">
+            <div class="profile-img">
+              <img src="./static/img/profile.png" alt="profile" />
+            </div>
+            <p>프로필</p>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

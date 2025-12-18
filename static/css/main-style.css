@@ -1,0 +1,278 @@
+:root {
+  --header-height: 55px;
+  --footer-height: 65px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  all: initial;
+}
+
+/* 오늘의 날씨 부분 */
+
+.weather-info-container {
+  width: 100%;
+  padding: 0 25px;
+}
+
+.weather-info-container .today-weather-container {
+  width: 100%;
+}
+
+.today-weather-container .today-weather-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.today-weather-container .locate-con {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.locate-con .locate-img-con {
+  width: 11px;
+}
+
+.locate-con p {
+  font-size: 0.9rem;
+}
+
+.today-weather-container .weather-contents-con {
+  width: 100%;
+  background-color: #fafafa;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.weather-contents-con .top-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.top-con .weather-img-con {
+  width: 50px;
+  margin-top: 20px;
+}
+
+.top-con .temperature {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+
+.top-con .weather-state {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.bottom-con {
+  width: 100%;
+  display: flex;
+  flex-direction: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  gap: 10%;
+}
+
+.bottom-con .humidity-info-con,
+.bottom-con .wind-info-con,
+.bottom-con .precipitation-info-con,
+.bottom-con .uv-info-con {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.humidity-info-con .humidity-img-con,
+.wind-info-con .wind-img-con,
+.precipitation-info-con .precipitation-img-con,
+.uv-info-con .uv-img-con {
+  width: 16px;
+  margin-top: 3px;
+}
+
+.humidity-info-con .name,
+.wind-info-con .name,
+.precipitation-info-con .name,
+.uv-info-con .name {
+  color: #737373;
+  font-weight: 500;
+}
+
+/* 대기질 정보 */
+.air-quality-container {
+  width: 100%;
+  background: #fafafa;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 15px 50px;
+}
+
+.air-quality-container .air-quality-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.air-quality-container .air-quality-info-con {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.air-quality-info-con .fine-dust-con,
+.air-quality-info-con .ultrafine-dust-con {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.fine-dust-con .name,
+.ultrafine-dust-con .name {
+  font-size: 0.7rem;
+  color: #737373;
+}
+
+.fine-dust-con .state,
+.ultrafine-dust-con .state {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.tip-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 10px 25px;
+  margin-top: 20px;
+}
+
+.tip-container .tip-img-con {
+  width: 20px;
+  margin-top: 5px;
+}
+
+.tip-container p {
+  font-size: 0.85rem;
+}
+
+/* 내일 미리보기 */
+
+.tomorrow-info-container {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.tomorrow-info-container .title {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.tomorrow-info-container .tomorrow-weather-con {
+  margin-top: 20px;
+  padding: 20px 60px;
+  background: #fafafa;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tomorrow-weather-con .left-con {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.left-con .weather-img-con {
+  width: 48px;
+  margin-top: 5px;
+}
+
+.weather-info-con .temperature {
+  font-weight: 500;
+}
+
+.weather-info-con .weather-state {
+  font-size: 0.9rem;
+  color: #525252;
+}
+
+.tomorrow-weather-con .right-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.right-con .precipitation-title {
+  color: #525252;
+}
+
+.right-con .precipitation-value {
+  font-weight: 500;
+}
+
+.tomorrow-info-container .tomorrow-tip-con {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 18px 30px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tomorrow-tip-con .tip-img-con {
+  width: 25px;
+  margin-top: 5px;
+}
+
+.tomorrow-tip-con p {
+  font-size: 0.85rem;
+}
+
+.tomorrow-info-container .btn-style {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  margin: 45px 0;
+  padding: 15px;
+  background: #000;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+.tomorrow-info-container .btn-style:hover {
+  opacity: 0.8;
+}
