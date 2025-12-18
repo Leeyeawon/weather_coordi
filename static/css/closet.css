@@ -22,7 +22,7 @@ html{
   scrollbar-width: none;      /* Firefox */
 }
 
-html::-webkit-scrollbar,{
+html::-webkit-scrollbar{
   width: 0;
   height: 0;
   display: none;              /* Chrome/Safari */

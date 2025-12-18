@@ -48,25 +48,16 @@
         <!-- 건강 & 보조 아이템 추천 -->
         <div class="health-recommend-container">
           <p class="title">건강 & 보조 아이템 추천</p>
-          <div class="health-con">
+
+          <div class="health-con" id="healthList">
+            <!-- ✅ JS가 2~3개 카드 자동 렌더링 -->
             <div class="health1-con">
               <div class="health1-img-con">
                 <img src="./static/img/mask.png" alt="mask" />
               </div>
               <div class="health1-info-con">
-                <p>마스크 착용 권장</p>
-                <p>미세먼지가 나쁜 날이에요. 마스크를 꼭 챙겨보세요.</p>
-              </div>
-            </div>
-            <div class="health2-con">
-              <div class="health2-img-con">
-                <img src="./static/img/uv-protect.png" alt="uv" />
-              </div>
-              <div class="health2-info-con">
-                <p>자외선 차단</p>
-                <p>
-                  오늘은 자외선이 낮지만, 외출 시 선크림을 바르는 것을 추천해요.
-                </p>
+                <p>불러오는 중...</p>
+                <p>부산 날씨/대기 정보를 가져오고 있어요.</p>
               </div>
             </div>
           </div>
@@ -139,21 +130,21 @@
             <p>홈</p>
           </a>
           <!-- 코디 -->
-          <a href="/" class="style-con">
+          <a href="/style" class="style-con">
             <div class="style-img">
               <img src="./static/img/style-select.png" alt="style" />
             </div>
             <p class="select">스타일</p>
           </a>
           <!-- 옷장 -->
-          <a href="/" class="closet-con">
+          <a href="/closet" class="closet-con">
             <div class="closet-img">
               <img src="./static/img/closet.png" alt="closet" />
             </div>
             <p>옷장</p>
           </a>
           <!-- 프로필 -->
-          <a href="/" class="profile-con">
+          <a href="/profile" class="profile-con">
             <div class="profile-img">
               <img src="./static/img/profile.png" alt="profile" />
             </div>

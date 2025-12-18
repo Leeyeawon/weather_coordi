@@ -29,16 +29,16 @@
               <div class="locate-img-con">
                 <img src="./static/img/locate.png" alt="위치 아이콘" />
               </div>
-              <p>서울특별시 강남구</p>
+              <p id="locText">부산광역시</p>
             </div>
             <div class="weather-contents-con">
               <div class="top-con">
                 <div class="weather-img-con">
                   <img src="./static/img/sun.png" alt="날씨 아이콘" />
                 </div>
-                <p class="temperature">12°C</p>
-                <p class="wind-chill">체감온도 9°C</p>
-                <p class="weather-state">맑음</p>
+                <p class="temperature" id="curTemp">-°</p>
+                <p class="wind-chill" id="curFeels">체감 온도 -°</p>
+                <p class="weather-state" id="curWx">-</p>
               </div>
               <div class="bottom-con">
                 <!-- 습도 -->
@@ -48,7 +48,7 @@
                   </div>
                   <div class="humidity-state-con">
                     <div class="name">습도</div>
-                    <div class="value">65%</div>
+                    <p class="weather-state" id="curHumidity">-%</p>
                   </div>
                 </div>
                 <!-- 바람 -->
@@ -58,7 +58,7 @@
                   </div>
                   <div class="wind-state-con">
                     <div class="name">바람</div>
-                    <div class="value">65%</div>
+                    <p class="weather-state" id="curWind">-</p><p class="unit">m/s</p>
                   </div>
                 </div>
                 <!-- 강수확률 -->
@@ -71,7 +71,7 @@
                   </div>
                   <div class="precipitation-state-con">
                     <div class="name">강수확률</div>
-                    <div class="value">65%</div>
+                    <p class="weather-state" id="curPop">--%</p>
                   </div>
                 </div>
                 <!-- 자외선 -->
@@ -81,7 +81,7 @@
                   </div>
                   <div class="uv-state-con">
                     <div class="name">자외선</div>
-                    <div class="value">65%</div>
+                    <p class="weather-state" id="curUv">-</p>
                   </div>
                 </div>
               </div>
@@ -93,11 +93,11 @@
             <div class="air-quality-info-con">
               <div class="fine-dust-con">
                 <p class="name">미세먼지</p>
-                <p class="state">나쁨</p>
+                <p class="dust-state" id="pm10State">-</p>
               </div>
               <div class="ultrafine-dust-con">
                 <p class="name">초미세먼지</p>
-                <p class="state">나쁨</p>
+                <p class="dust-state" id="pm25State">-</p>
               </div>
             </div>
           </div>
@@ -120,13 +120,11 @@
                   <img src="./static/img/tomorrow.png" alt="내일 날씨" />
                 </div>
                 <div class="weather-info-con">
-                  <p class="temperature">15°C / 8°C</p>
-                  <p class="weather-state">흐림</p>
+                  <p class="temperature" id="tomRange">-° / -°</p>
                 </div>
               </div>
               <div class="right-con">
-                <p class="precipitation-title">강수확률</p>
-                <p class="precipitation-value">40%</p>
+                <p class="weather-state" id="tomPop">강수확률 --%</p>
               </div>
             </div>
             <div class="tomorrow-tip-con">
