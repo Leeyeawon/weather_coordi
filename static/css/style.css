@@ -8,3 +8,316 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  all: initial;
+}
+
+.today-recommend-container {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.today-recommend-container .title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.today-recommend-container .item-container {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.item-container .item-align-con {
+  width: 100%;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.item-align-con .item-img-con {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.item-align-con img,
+.item-name,
+.item-detail {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.item-align-con .item-name {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: #171717;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.item-align-con .item-detail {
+  width: 80%;
+  margin: 0 auto;
+  color: #525252;
+  margin-top: 5px;
+}
+
+.item-container .btn-diff-item {
+  cursor: pointer;
+  user-select: none;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  border: 1px solid #d4d4d4;
+  border-radius: 10px;
+  padding: 12px 20px;
+}
+
+.item-container .btn-diff-item:hover {
+  border: 1px solid #0075ff;
+}
+
+.btn-diff-item .diff-item-img {
+  width: 20px;
+  margin-top: 2px;
+  margin-left: 70px;
+}
+
+.btn-diff-item p:nth-of-type(1) {
+  font-weight: 500;
+}
+
+.btn-diff-item .count {
+  margin-right: 70px;
+}
+
+/* 건강 보조 아이템 */
+.health-recommend-container {
+  /* background: #f5f5f5; */
+  padding: 0 30px;
+  margin-top: 50px;
+}
+
+.health-recommend-container .title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.health-recommend-container .health-con {
+  background: #f5f5f5;
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.health-recommend-container .health1-con,
+.health-recommend-container .health2-con {
+  background: #fff;
+  border: 1px solid #d4d4d4;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.health-recommend-container .health2-con {
+  margin-top: 20px;
+}
+
+.health1-con .health1-img-con,
+.health2-con .health2-img-con {
+  width: 50px;
+}
+
+.health1-con p:nth-of-type(1),
+.health2-con p:nth-of-type(1) {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.health1-con p:nth-of-type(2),
+.health2-con p:nth-of-type(2) {
+  font-size: 0.8rem;
+}
+
+/* 나의 취향 설정 */
+
+.my-favorite-container {
+  position: relative;
+  width: 100%;
+  padding: 0 30px;
+  margin-top: 50px;
+}
+
+.my-favorite-container .title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.my-favorite-container .bad-item {
+  margin-bottom: 5px;
+}
+
+.my-favorite-container .bad-item,
+.my-favorite-container .style {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bad-item p:nth-of-type(1),
+.style p:nth-of-type(1) {
+  width: 17%;
+  color: #525252;
+}
+
+.bad-item .tag span,
+.style .tag span {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.my-favorite-container .btn-edit {
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-edit .edit-img {
+  width: 13px;
+  margin-top: 2px;
+}
+
+.btn-edit p {
+  font-size: 0.75rem;
+}
+
+/* 오늘의 코디 */
+.today-style-ex-con {
+  width: 100%;
+  padding: 0 30px;
+  margin-top: 50px;
+}
+
+.today-style-ex-con .title {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.today-style-ex-con .today-style-align-con {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.today-style-align-con .today-style-img-con {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.today-style-img-con .favorite {
+  display: none;
+  width: 25px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.today-style-img-con .favorite.show {
+  display: block;
+}
+
+.today-style-align-con .today-style-info-con {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin-top: 20px;
+}
+
+.today-style-info-con .title {
+  font-weight: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.today-style-info-con .top,
+.today-style-info-con .bottom,
+.today-style-info-con .outer,
+.today-style-info-con .shoes {
+  display: flex;
+  gap: 10px;
+}
+
+.today-style-info-con .bottom,
+.today-style-info-con .outer,
+.today-style-info-con .shoes {
+  margin-top: 5px;
+}
+
+.today-style-info-con .top p:nth-of-type(1),
+.today-style-info-con .bottom p:nth-of-type(1),
+.today-style-info-con .outer p:nth-of-type(1),
+.today-style-info-con .shoes p:nth-of-type(1) {
+  width: 15%;
+}
+
+.today-style-align-con .btn-favorite {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 70%;
+  margin: 0 auto;
+  background-color: #000;
+  border-radius: 15px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 15px 20px;
+}
+
+.today-style-align-con .btn-favorite:hover {
+  opacity: 0.8;
+}
+
+.btn-favorite .favorite-img {
+  width: 25px;
+  margin-top: 3px;
+}
+
+.btn-favorite p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.05rem;
+}

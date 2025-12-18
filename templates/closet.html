@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>내 옷장</title>
+
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="./static/css/closet.css" />
+
+    <script defer src="./static/js/common.js"></script>
+    <script defer src="./static/js/closet.js"></script>
+  </head>
+
+  <body class="closet-page">
+    <div class="align-container">
+      <header class="header">
+        <div class="header-align-container">
+          <div class="logo-container">
+            <div class="back-con">
+              <img src="./static/img/back.png" alt="back" />
+            </div>
+          </div>
+          <div class="title">내 옷장</div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="closet-wrap">
+          <!-- 이번 달 인사이트 -->
+          <section class="card card-line insight-card">
+            <div class="insight-head">
+              <span class="insight-icon" aria-hidden="true"></span>
+              <p class="insight-title">이번 달 인사이트</p>
+            </div>
+            <p class="insight-text">
+              지난 30일 동안, 상의는 주로 니트류를,<br />
+              바지는 슬랙스를 많이 입었어요.
+            </p>
+          </section>
+
+          <!-- 즐겨찾기 코디 -->
+          <div class="section-title-row">
+            <h2 class="section-title">즐겨찾기 코디</h2>
+            <a class="section-link" href="favorites">전체보기 <span class="chev">›</span></a>
+          </div>
+
+          <section class="card card-line fav-item">
+            <div class="fav-left">
+              <img class="thumb" src="https://placehold.co/73x73" alt="코디 이미지" />
+              <div class="fav-info">
+                <p class="fav-date">2025.01.15</p>
+                <p class="fav-meta">체감온도 8°C · 맑음</p>
+                <button class="fav-btn" type="button">비슷한 날씨 다시 보기</button>
+              </div>
+            </div>
+            <button class="star-btn is-on" type="button" aria-label="즐겨찾기">
+              ★
+            </button>
+          </section>
+
+          <section class="card card-line fav-item">
+            <div class="fav-left">
+              <img class="thumb" src="https://placehold.co/73x73" alt="코디 이미지" />
+              <div class="fav-info">
+                <p class="fav-date">2025.01.12</p>
+                <p class="fav-meta">체감온도 12°C · 흐림</p>
+                <button class="fav-btn" type="button">비슷한 날씨 다시 보기</button>
+              </div>
+            </div>
+            <button class="star-btn is-on" type="button" aria-label="즐겨찾기">
+              ★
+            </button>
+          </section>
+
+          <!-- 아이템 사용 통계 -->
+          <h2 class="section-title mt-18">아이템 사용 통계</h2>
+
+          <section class="card card-line stat-card">
+            <p class="stat-subtitle">이번 달 가장 많이 입은 아이템</p>
+
+            <div class="stat-row">
+              <img class="mini" src="https://placehold.co/40x40" alt="아이템" />
+              <div class="stat-info">
+                <p class="stat-name">크림 롱코트</p>
+                <p class="stat-cat">아우터</p>
+              </div>
+              <div class="stat-count">8회</div>
+            </div>
+
+            <div class="stat-row">
+              <img class="mini" src="https://placehold.co/36x36" alt="아이템" />
+              <div class="stat-info">
+                <p class="stat-name">베이지 니트</p>
+                <p class="stat-cat">상의</p>
+              </div>
+              <div class="stat-count">6회</div>
+            </div>
+
+            <div class="stat-note">
+              이번 달 가장 자주 입은 아우터는 '크림 롱코트'예요.<br />
+              8번 착용했습니다.
+            </div>
+          </section>
+
+          <section class="card card-line unused-card">
+            <p class="stat-subtitle">최근 60일간 입지 않은 아이템</p>
+
+            <div class="unused-row">
+              <img class="mini" src="https://placehold.co/40x40" alt="아이템" />
+              <div class="unused-info">
+                <p class="stat-name">블랙 조끼</p>
+                <p class="stat-cat">아우터 · 2024.10.15</p>
+              </div>
+            </div>
+
+            <div class="unused-row">
+              <img class="mini" src="https://placehold.co/40x40" alt="아이템" />
+              <div class="unused-info">
+                <p class="stat-name">블랙 부츠</p>
+                <p class="stat-cat">신발 · 착용 기록 없음</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 정리 후보 아이템 -->
+          <h2 class="section-title mt-18">정리 후보 아이템</h2>
+          <p class="section-desc">6개월 이상 착용하지 않은 아이템들이에요</p>
+
+          <section class="card card-line cleanup-card">
+            <!-- row 1 -->
+            <div class="clean-row" data-item="shirt">
+              <img class="clean-thumb" src="https://placehold.co/48x48" alt="아이템" />
+              <div class="clean-info">
+                <p class="clean-name">화이트 셔츠</p>
+                <p class="clean-meta">상의 · 2024.06.20</p>
+
+                <div class="pick-group">
+                  <button class="pick is-on" data-pick="trash" type="button">
+                    <span class="box"></span>버릴 후보
+                  </button>
+                  <button class="pick" data-pick="donate" type="button">
+                    <span class="box"></span>기부 후보
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- row 2 -->
+            <div class="clean-row" data-item="cardigan">
+              <img class="clean-thumb" src="https://placehold.co/48x48" alt="아이템" />
+              <div class="clean-info">
+                <p class="clean-name">그레이 카디건</p>
+                <p class="clean-meta">상의 · 2024.06.20</p>
+
+                <div class="pick-group">
+                  <button class="pick" data-pick="trash" type="button">
+                    <span class="box"></span>버릴 후보
+                  </button>
+                  <button class="pick is-on" data-pick="donate" type="button">
+                    <span class="box"></span>기부 후보
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- row 3 -->
+            <div class="clean-row" data-item="shoes">
+              <img class="clean-thumb" src="https://placehold.co/48x48" alt="아이템" />
+              <div class="clean-info">
+                <p class="clean-name">레드 운동화</p>
+                <p class="clean-meta">신발 · 착용 기록 없음</p>
+
+                <div class="pick-group">
+                  <button class="pick is-on" data-pick="trash" type="button">
+                    <span class="box"></span>버릴 후보
+                  </button>
+                  <button class="pick" data-pick="donate" type="button">
+                    <span class="box"></span>기부 후보
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <button class="cleanup-cta" type="button">
+              선택한 아이템 정리하기
+            </button>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-align-container">
+          <!-- 홈 -->
+          <a href="/" class="home-con">
+            <div class="home-img">
+              <img src="./static/img/home.png" alt="home" />
+            </div>
+            <p>홈</p>
+          </a>
+          <!-- 코디 -->
+          <a href="/style" class="style-con">
+            <div class="style-img">
+              <img src="./static/img/style.png" alt="style" />
+            </div>
+            <p>스타일</p>
+          </a>
+          <!-- 옷장 -->
+          <a href="/closet" class="closet-con">
+            <div class="closet-img">
+              <img src="./static/img/closet-select.png" alt="closet" />
+            </div>
+            <p class="select">옷장</p>
+          </a>
+          <!-- 프로필 -->
+          <a href="/profile" class="profile-con">
+            <div class="profile-img">
+              <img src="./static/img/profile.png" alt="profile" />
+            </div>
+            <p>프로필</p>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

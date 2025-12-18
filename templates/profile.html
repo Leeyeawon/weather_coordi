@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마이페이지</title>
+
+    <link rel="stylesheet" href="./static/css/common.css" />
+    <link rel="stylesheet" href="./static/css/profile.css" />
+
+    <script defer src="./static/js/common.js"></script>
+    <script defer src="./static/js/profile.js"></script>
+  </head>
+
+  <body>
+    <div class="align-container">
+      <header class="header">
+        <div class="header-align-container">
+          <div class="logo-container">
+            <div class="back-con">
+              <img src="./static/img/back.png" alt="back" />
+            </div>
+          </div>
+          <div class="title">프로필</div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="profile-wrap">
+          <!-- 프로필 카드 -->
+          <section class="card card-fill profile-card">
+            <div class="profile-top">
+              <div class="avatar">
+                <img src="https://placehold.co/48x48" alt="프로필" />
+              </div>
+              <div class="profile-text">
+                <div class="name">이예원</div>
+                <div class="desc">스타일 프로필</div>
+              </div>
+            </div>
+
+            <div class="profile-tags">
+              <div class="tag-row">
+                <div class="tag-label">체감온도</div>
+                <div class="tag-values">
+                  <span class="hash">#추위 민감</span>
+                </div>
+              </div>
+
+              <div class="tag-row">
+                <div class="tag-label">스타일</div>
+                <div class="tag-values">
+                  <span class="hash">#포멀</span>
+                  <span class="hash">#러블리</span>
+                </div>
+              </div>
+
+              <div class="tag-row">
+                <div class="tag-label">회피 아이템</div>
+                <div class="tag-values">
+                  <span class="hash">#민소매</span>
+                  <span class="hash">#반바지</span>
+                  <span class="hash">#탑</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 회피 의상 관리 -->
+          <section class="card card-line section">
+            <div class="section-head">
+              <div class="section-title">회피 의상 관리</div>
+              <button class="link-btn" id="btnEditAvoid">편집</button>
+            </div>
+
+            <div class="chips" id="avoidChips">
+              <span class="chip" data-chip="민소매">
+                민소매 <span class="x" aria-hidden="true">✕</span>
+              </span>
+              <span class="chip" data-chip="반바지">
+                반바지 <span class="x" aria-hidden="true">✕</span>
+              </span>
+              <span class="chip" data-chip="탑">
+                탑 <span class="x" aria-hidden="true">✕</span>
+              </span>
+            </div>
+
+            <div class="add-row" id="avoidAddRow">
+              <input
+                class="add-input"
+                id="avoidInput"
+                type="text"
+                placeholder="회피 아이템 추가"
+              />
+              <button class="add-btn" id="btnAddAvoid">추가</button>
+            </div>
+          </section>
+
+          <!-- 취향(스타일) 설정 -->
+          <section class="card card-line section">
+            <div class="section-head">
+              <div class="section-title">취향(스타일) 설정</div>
+            </div>
+
+            <div class="slider-block">
+              <div class="slider-labels">
+                <span>캐주얼</span><span>포멀</span>
+              </div>
+              <input
+                class="range"
+                type="range"
+                min="0"
+                max="100"
+                value="70"
+                id="rangeCasualFormal"
+              />
+            </div>
+
+            <div class="slider-block">
+              <div class="slider-labels">
+                <span>심플</span><span>러블리</span>
+              </div>
+              <input
+                class="range"
+                type="range"
+                min="0"
+                max="100"
+                value="55"
+                id="rangeSimpleLovely"
+              />
+            </div>
+          </section>
+
+          <!-- 건강 상태 설정 -->
+          <section class="card card-line section">
+            <div class="section-head">
+              <div class="section-title">건강 상태 설정</div>
+            </div>
+
+            <label class="check-row">
+              <span>비염</span>
+              <input class="check" type="checkbox" />
+            </label>
+
+            <label class="check-row">
+              <span>햇빛 알레르기</span>
+              <input class="check" type="checkbox" checked />
+            </label>
+
+            <label class="check-row">
+              <span>아토피/피부 민감</span>
+              <input class="check" type="checkbox" />
+            </label>
+
+            <label class="check-row">
+              <span>기압 변화에 따른 두통</span>
+              <input class="check" type="checkbox" />
+            </label>
+          </section>
+
+          <!-- 보유 보조 아이템 -->
+          <section class="card card-line section">
+            <div class="section-head">
+              <div class="section-title">보유 보조 아이템</div>
+            </div>
+
+            <label class="check-row">
+              <span>마스크</span>
+              <input class="check" type="checkbox" checked />
+            </label>
+
+            <label class="check-row">
+              <span>양산</span>
+              <input class="check" type="checkbox" checked />
+            </label>
+
+            <label class="check-row">
+              <span>모자</span>
+              <input class="check" type="checkbox" />
+            </label>
+
+            <label class="check-row">
+              <span>레인부츠</span>
+              <input class="check" type="checkbox" />
+            </label>
+
+            <label class="check-row">
+              <span>우비</span>
+              <input class="check" type="checkbox" checked />
+            </label>
+          </section>
+
+          <!-- 알림 설정 -->
+          <section class="card card-line section">
+            <div class="section-head">
+              <div class="section-title">알림 설정</div>
+            </div>
+
+            <label class="check-row">
+              <span>아침에 "오늘의 아이템" 알림</span>
+              <input class="check" type="checkbox" checked />
+            </label>
+
+            <label class="check-row">
+              <span>미세먼지 나쁜 날 마스크 알림</span>
+              <input class="check" type="checkbox" checked />
+            </label>
+
+            <label class="check-row">
+              <span>자외선 강한 날 양산/모자 알림</span>
+              <input class="check" type="checkbox" />
+            </label>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-align-container">
+          <!-- 홈 -->
+          <a href="/" class="home-con">
+            <div class="home-img">
+              <img src="./static/img/home.png" alt="home" />
+            </div>
+            <p>홈</p>
+          </a>
+          <!-- 코디 -->
+          <a href="/style" class="style-con">
+            <div class="style-img">
+              <img src="./static/img/style.png" alt="style" />
+            </div>
+            <p>스타일</p>
+          </a>
+          <!-- 옷장 -->
+          <a href="/closet" class="closet-con">
+            <div class="closet-img">
+              <img src="./static/img/closet.png" alt="closet" />
+            </div>
+            <p>옷장</p>
+          </a>
+          <!-- 프로필 -->
+          <a href="/profile" class="profile-con">
+            <div class="profile-img">
+              <img src="./static/img/profile-select.png" alt="profile" />
+            </div>
+            <p class="select">프로필</p>
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

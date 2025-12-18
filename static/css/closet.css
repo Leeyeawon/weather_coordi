@@ -1,0 +1,273 @@
+:root{
+  --card:#fff;
+  --bg:#fafafa;
+  --line:#e5e5e5;
+  --text:#171717;
+  --muted:#525252;
+  --muted2:#737373;
+  --blue:#0075ff;
+  --radius:8px;
+  --header-height:55px;
+  --footer-height:65px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  -ms-overflow-style: none;   /* IE/Edge */
+  scrollbar-width: none;      /* Firefox */
+}
+
+html::-webkit-scrollbar,{
+  width: 0;
+  height: 0;
+  display: none;              /* Chrome/Safari */
+}
+
+/* 공통 카드 */
+.card{ border-radius: var(--radius); }
+.card-line{ background: var(--card); border:1px solid var(--line); }
+
+.closet-wrap{
+  padding: 14px 20px 0;
+  display:flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* 인사이트 */
+.insight-card{
+  padding: 14px 16px;
+}
+.insight-head{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.insight-icon{
+  width: 12px;
+  height: 16px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+.insight-title{
+  font-size: 16px;
+  color: var(--blue);
+  line-height: 20px;
+}
+.insight-text{
+  font-size: 18px;
+  color: var(--text);
+  line-height: 25.6px;
+}
+
+/* 섹션 타이틀 */
+.section-title-row{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 6px;
+}
+.section-title{
+  font-size: 18px;
+  line-height: 28px;
+  color:#000;
+  font-weight: 400;
+}
+.section-link{
+  font-size: 16px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.section-link .chev{
+  font-size: 18px;
+  line-height: 1;
+}
+.section-desc{
+  margin-top: -8px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* 즐겨찾기 카드 */
+.fav-item{
+  padding: 14px 16px;
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.fav-left{
+  display:flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.thumb{
+  width:73px;
+  height:73px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.fav-date{
+  font-size: 16px;
+  color:#000;
+  line-height: 22.4px;
+}
+.fav-meta{
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.fav-btn{
+  margin-top: 8px;
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 3px;
+  background: #f5f5f5;
+  border: none;
+  font-size: 14px;
+  color: #404040;
+}
+.star-btn{
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: #a3a3a3;
+}
+.star-btn.is-on{ color: var(--blue); }
+
+/* 통계 카드 */
+.mt-18{ margin-top: 18px; }
+
+.stat-card{
+  padding: 14px 16px;
+}
+.stat-subtitle{
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.stat-row{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 8px 0;
+}
+.mini{
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+  background:#f7f7f7;
+}
+.stat-info{ flex: 1; min-width:0; }
+.stat-name{
+  font-size: 16px;
+  color:#000;
+}
+.stat-cat{
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.stat-count{
+  font-size: 16px;
+  color:#000;
+  line-height: 20px;
+}
+.stat-note{
+  margin-top: 10px;
+  background: var(--bg);
+  border-radius: 5px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color:#404040;
+  line-height: 18px;
+}
+
+.unused-card{
+  padding: 14px 16px;
+}
+.unused-row{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid #f1f1f1;
+}
+.unused-row:first-of-type{ border-top: none; }
+.unused-info{ flex:1; min-width:0; }
+
+/* 정리 후보 */
+.cleanup-card{
+  padding: 14px 16px 16px;
+}
+.clean-row{
+  display:flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #f1f1f1;
+}
+.clean-row:first-of-type{ border-top:none; }
+.clean-thumb{
+  width:60px;
+  height:60px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.clean-info{ flex:1; min-width:0; }
+.clean-name{
+  font-size: 16px;
+  color: var(--text);
+}
+.clean-meta{
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* 버릴/기부 선택 */
+.pick-group{
+  display:flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+.pick{
+  display:inline-flex;
+  align-items:center;
+  gap: 6px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color:#000;
+  padding: 0;
+}
+.pick .box{
+  width: 13px;
+  height: 13px;
+  border-radius: 1px;
+  border: 0.5px solid #000;
+  background: #fff;
+}
+.pick.is-on .box{
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+/* CTA */
+.cleanup-cta{
+  margin-top: 14px;
+  width: 100%;
+  height: 39px;
+  border-radius: 5px;
+  background: #000;
+  color:#fff;
+  border: none;
+  font-size: 16px;
+}
