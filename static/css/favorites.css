@@ -146,3 +146,18 @@ html, body{ overflow-x: hidden; }
   text-decoration: none;
   font-size: 14px;
 }
+
+/* 뒤로가기(아이콘)만 작게 */
+.header .back-con{
+  width: 28px;          /* 클릭 영역 */
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .back-con img{
+  width: 16px;          /* 실제 이미지 크기 */
+  height: 16px;
+  display: block;
+}

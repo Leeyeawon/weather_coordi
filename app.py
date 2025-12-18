@@ -74,12 +74,30 @@ def _aq_grade_pm25(v):
 
 
 def _pick_hour_index(times: list[str], target_key: str) -> int:
-    # times: ["2025-12-19T04:00", ...], target_key 동일형식
+    # times: ["2025-12-19T04:00", ...]
+    if not times:
+        return 0
     try:
         return times.index(target_key)
     except ValueError:
-        # 없으면 가장 가까운 것으로 대충 (처음/끝 방어)
-        return 0
+        # target_key가 정확히 없으면 "가장 가까운 시간"으로 잡기
+        try:
+            target_dt = datetime.fromisoformat(target_key)
+        except Exception:
+            return 0
+
+        best_i = 0
+        best_diff = None
+        for i, t in enumerate(times):
+            try:
+                dt = datetime.fromisoformat(t)
+                diff = abs((dt - target_dt).total_seconds())
+                if best_diff is None or diff < best_diff:
+                    best_diff = diff
+                    best_i = i
+            except Exception:
+                continue
+        return best_i
 
 
 def get_dashboard_data():
@@ -98,7 +116,7 @@ def get_dashboard_data():
         "daily": "temperature_2m_max,temperature_2m_min,precipitation_probability_max,uv_index_max",
         "forecast_days": 3,
     }
-    w = _safe_get(weather_url, weather_params)
+    weather = _safe_get(weather_url, weather_params)
 
     # ---- Air Quality (PM10/PM2.5) ----
     aq_url = "https://air-quality-api.open-meteo.com/v1/air-quality"
@@ -109,13 +127,15 @@ def get_dashboard_data():
         "hourly": "pm10,pm2_5",
         "forecast_days": 2,
     }
-    a = _safe_get(aq_url, aq_params)
+    air = _safe_get(aq_url, aq_params)
 
     # ---- 현재 시각(정시 기준) ----
     now_dt = datetime.now(KST)
+    now_hour = now_dt.replace(minute=0, second=0, microsecond=0)
+    now_key = now_hour.strftime("%Y-%m-%dT%H:00")
 
     # 현재(Weather current)
-    cur = w.get("current", {})
+    cur = weather.get("current", {}) or {}
     temp = cur.get("temperature_2m")
     feels = cur.get("apparent_temperature")
     humidity = cur.get("relative_humidity_2m")
@@ -124,22 +144,24 @@ def get_dashboard_data():
     wx = _wx_text(wcode if isinstance(wcode, int) else -1)
 
     # 현재(강수확률/UV: hourly에서 현재시간 인덱스)
-    h_times = (w.get("hourly", {}) or {}).get("time", []) or []
-    idx = _pick_hour_index(h_times, now_dt)
+    hourly = weather.get("hourly", {}) or {}
+    h_times = hourly.get("time", []) or []
+    idx = _pick_hour_index(h_times, now_key)
+
     precip_prob = None
     uv = None
-    hourly = w.get("hourly", {}) or {}
     if hourly.get("precipitation_probability"):
         precip_prob = hourly["precipitation_probability"][idx]
     if hourly.get("uv_index"):
         uv = hourly["uv_index"][idx]
 
     # 현재(PM10/PM2.5)
-    aq_times = (a.get("hourly", {}) or {}).get("time", []) or []
-    aidx = _pick_hour_index(aq_times, now_dt)
+    ah = air.get("hourly", {}) or {}
+    aq_times = ah.get("time", []) or []
+    aidx = _pick_hour_index(aq_times, now_key)
+
     pm10 = None
     pm25 = None
-    ah = a.get("hourly", {}) or {}
     if ah.get("pm10"):
         pm10 = ah["pm10"][aidx]
     if ah.get("pm2_5"):
@@ -147,29 +169,13 @@ def get_dashboard_data():
 
     # 내일(일별)
     tomorrow = (now_dt.date() + timedelta(days=1)).isoformat()
-    d = w.get("daily", {}) or {}
+    d = weather.get("daily", {}) or {}
     d_times = d.get("time", []) or []
     try:
         didx = d_times.index(tomorrow)
     except ValueError:
         didx = 1 if len(d_times) > 1 else 0
 
-    today = now_dt.date().isoformat()
-    tomorrow = (now_dt.date() + timedelta(days=1)).isoformat()
-
-    try:
-        tidx = d_times.index(today)
-    except ValueError:
-        tidx = 0
-
-    try:
-        didx = d_times.index(tomorrow)
-    except ValueError:
-        didx = 1 if len(d_times) > 1 else 0
-
-    today_uv_max = d.get("uv_index_max", [None])[tidx]
-    today_pop_max = d.get("precipitation_probability_max", [None])[tidx]
-    
     tmin = d.get("temperature_2m_min", [None])[didx]
     tmax = d.get("temperature_2m_max", [None])[didx]
     tpop = d.get("precipitation_probability_max", [None])[didx]

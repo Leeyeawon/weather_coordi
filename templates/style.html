@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Style Fit</title>
-    <link rel="stylesheet" href="./static/css/common.css" />
-    <link rel="stylesheet" href="./static/css/style.css" />
-    <script defer src="./static/js/common.js"></script>
-    <script defer src="./static/js/style.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script defer src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/style.js') }}"></script>
   </head>
   <body>
     <div class="align-container">
@@ -49,19 +49,29 @@
         <div class="health-recommend-container">
           <p class="title">건강 & 보조 아이템 추천</p>
 
-          <div class="health-con" id="healthList">
-            <!-- ✅ JS가 2~3개 카드 자동 렌더링 -->
+          <div class="health-con">
             <div class="health1-con">
               <div class="health1-img-con">
-                <img src="./static/img/mask.png" alt="mask" />
+                <img id="health1Icon" src="./static/img/mask.png" alt="health1" />
               </div>
               <div class="health1-info-con">
-                <p>불러오는 중...</p>
-                <p>부산 날씨/대기 정보를 가져오고 있어요.</p>
+                <p id="health1Title">마스크 착용 권장</p>
+                <p id="health1Desc">미세먼지가 나쁜 날이에요. 마스크를 꼭 챙겨보세요.</p>
+              </div>
+            </div>
+
+            <div class="health2-con">
+              <div class="health2-img-con">
+                <img id="health2Icon" src="./static/img/uv-protect.png" alt="health2" />
+              </div>
+              <div class="health2-info-con">
+                <p id="health2Title">자외선 차단</p>
+                <p id="health2Desc">오늘은 자외선이 낮지만, 외출 시 선크림을 추천해요.</p>
               </div>
             </div>
           </div>
         </div>
+        
         <!-- 나의 취향 설정 -->
         <div class="my-favorite-container">
           <p class="title">나의 취향 설정</p>
@@ -119,6 +129,22 @@
             </div>
           </div>
         </div>
+        
+        <div class="tomorrow-preview-container">
+          <p class="title">내일 날씨 미리보기</p>
+
+          <div class="tomorrow-preview-card">
+            <div class="tomorrow-left">
+              <p class="tomorrow-range" id="styleTomRange">-</p>
+              <p class="tomorrow-pop" id="styleTomPop">-</p>
+            </div>
+
+            <div class="tomorrow-right">
+              <p class="tomorrow-tip" id="styleTomTip">-</p>
+            </div>
+          </div>
+        </div>
+
       </main>
       <footer class="footer">
         <div class="footer-align-container">
